@@ -1,5 +1,6 @@
-import LinearStepper from './LinearStepper.jsx'
-import { CssBaseline, Container, Paper, Box } from '@material-ui/core'
+import LinearStepper from './LinearStepper';
+import { CssBaseline, Container, Paper, Box } from '@material-ui/core';
+import './styles.css';
 
 function App() {
   return (

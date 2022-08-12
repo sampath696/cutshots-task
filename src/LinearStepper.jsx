@@ -188,7 +188,7 @@ const LinaerStepper = () => {
           }
           return (
             <Step {...stepProps} key={index}>
-              <StepLabel {...labelProps}>{step}</StepLabel>
+              <StepLabel {...labelProps}></StepLabel>
             </Step>
           );
         })}
