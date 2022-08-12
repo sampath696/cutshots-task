@@ -1,12 +1,8 @@
 import React, { useState } from "react";
 import "./styles.css";
-// import { AccessAlarm } from "@mui/icons-material";
-// import SupervisorAccountIcon from "@mui/icons-material/SupervisorAccount";
 import PersonIcon from "@mui/icons-material/Person";
 import PeopleAltIcon from "@mui/icons-material/PeopleAlt";
 import CheckCircleSharpIcon from "@mui/icons-material/CheckCircleSharp";
-
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
   Typography,
   Button,
@@ -38,8 +34,6 @@ function getStepContent(step) {
     case 0:
       return (
         <>
-          {/* <AccessAlarm /> */}
-          {/* <SupervisorAccountIcon /> */}
           <div align="center">
             <h3>Welcome first things first...</h3>
             <p>You can always change them later</p>
@@ -71,15 +65,6 @@ function getStepContent(step) {
             <h3>Let's set up a home for all your work</h3>
             <p>You can always create workspace later</p>
           </div>
-          {/* <TextField
-            id="email"
-            label="Eden"
-            variant="outlined"
-            placeholder="Eden"
-            fullWidth
-            margin="normal"
-            name="emailAddress"
-          /> */}
           <Box
             sx={{
               width: 500,
@@ -156,29 +141,10 @@ const LinaerStepper = () => {
     }
   };
 
-  const isStepOptional = (step) => {
-    return step === 1 || step === 2;
-  };
-
-  const isStepSkipped = (step) => {
-    return skippedSteps.includes(step);
-  };
-
   const handleNext = () => {
     setActiveStep(activeStep + 1);
     setSkippedSteps(skippedSteps.filter((skipItem) => skipItem !== activeStep));
   };
-
-  // const handleBack = () => {
-  //   setActiveStep(activeStep - 1)
-  // }
-
-  // const handleSkip = () => {
-  //   if (!isStepSkipped(activeStep)) {
-  //     setSkippedSteps([...skippedSteps, activeStep])
-  //   }
-  //   setActiveStep(activeStep + 1)
-  // }
 
   return (
     <div>
@@ -186,20 +152,6 @@ const LinaerStepper = () => {
         {steps.map((step, index) => {
           const labelProps = {};
           const stepProps = {};
-          // if (isStepOptional(index)) {
-          //   labelProps.optional = (
-          //     <Typography
-          //       variant="caption"
-          //       align="center"
-          //       style={{ display: "block" }}
-          //     >
-          //       optional
-          //     </Typography>
-          //   );
-          // }
-          // if (isStepSkipped(index)) {
-          //   stepProps.completed = false;
-          // }
           return (
             <Step {...stepProps} key={index}>
               <StepLabel className="step-label" {...labelProps}></StepLabel>
@@ -215,23 +167,6 @@ const LinaerStepper = () => {
       ) : (
         <>
           <form>{getStepContent(activeStep)}</form>
-          {/* <Button
-            className={classes.button}
-            disabled={activeStep === 0}
-            onClick={handleBack}
-          >
-            back
-          </Button> */}
-          {/* {isStepOptional(activeStep) && (
-            <Button
-              className={classes.button}
-              variant="contained"
-              color="primary"
-              onClick={handleSkip}
-            >
-              skip
-            </Button>
-          )} */}
           <div align="center">
             <Button
               className={classes.button}
@@ -239,7 +174,6 @@ const LinaerStepper = () => {
               color="primary"
               onClick={handleNext}
             >
-              {/* {activeStep === steps.length - 1 ? 'Finish' : 'Next'} */}
               {downTextFunc()}
             </Button>
           </div>

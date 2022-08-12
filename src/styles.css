@@ -1,6 +1,5 @@
 .MuiBox-root {
   width: 75%;
-  /* text-align: center; */
 }
 
 .domainspan {
@@ -48,6 +47,5 @@ p {
 @media only screen and (max-width: 600px) {
   .MuiBox-root {
     width: 100%;
-    /* text-align: center; */
   }
 }
