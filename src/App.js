@@ -7,8 +7,8 @@ function App() {
     <>
       <CssBaseline />
       <Container component={Box} p={4}>
-        <Paper component={Box} p={3}>
-          <LinearStepper />
+        <Paper component={Box} p={3} margin="auto" border="none" boxShadow="none" >
+          <LinearStepper/>
         </Paper>
       </Container>
     </>

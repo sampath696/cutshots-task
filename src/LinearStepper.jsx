@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./styles.css";
-import { AccessAlarm } from "@mui/icons-material";
+// import { AccessAlarm } from "@mui/icons-material";
 // import SupervisorAccountIcon from "@mui/icons-material/SupervisorAccount";
 import PersonIcon from "@mui/icons-material/Person";
 import PeopleAltIcon from "@mui/icons-material/PeopleAlt";
@@ -9,12 +9,13 @@ import CheckCircleSharpIcon from "@mui/icons-material/CheckCircleSharp";
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
   Typography,
-  TextField,
   Button,
   Stepper,
   Step,
   StepLabel,
 } from "@material-ui/core";
+import TextField from "@mui/material/TextField";
+import Box from "@mui/material/Box";
 import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles((theme) => ({
@@ -37,38 +38,40 @@ function getStepContent(step) {
     case 0:
       return (
         <>
-          <AccessAlarm />
+          {/* <AccessAlarm /> */}
           {/* <SupervisorAccountIcon /> */}
-          <h1>Welcom first things first...</h1>
-          <p>You can always change them later</p>
-          <TextField
-            id="first-name"
-            label="steve jobs"
-            variant="outlined"
-            placeholder="steve jobs"
-            fullWidth
-            margin="normal"
-            name="firstName"
-          />
-          <TextField
-            id="Display-name"
-            label="steve"
-            variant="outlined"
-            placeholder="steve"
-            fullWidth
-            margin="normal"
-            name="lastName"
-          />
+          <div align="center">
+            <h3>Welcome first things first...</h3>
+            <p>You can always change them later</p>
+          </div>
+
+          <Box
+            sx={{
+              width: 500,
+              maxWidth: "100%",
+              justifyContent: "center",
+              margin: "auto",
+            }}
+          >
+            <label>Full Name</label>
+            <TextField fullWidth label="steve jobs" id="fullWidth" />
+            <br />
+            <br />
+            <label>Display Name</label>
+            <TextField fullWidth label="steve" id="fullWidth" />
+          </Box>
+          <br />
         </>
       );
 
     case 1:
       return (
         <>
-          <h1>Let's set up a home for all your work</h1>
-          <p>You can always create workspace later</p>
-          <label> Workspace Name </label>
-          <TextField
+          <div align="center">
+            <h3>Let's set up a home for all your work</h3>
+            <p>You can always create workspace later</p>
+          </div>
+          {/* <TextField
             id="email"
             label="Eden"
             variant="outlined"
@@ -76,51 +79,62 @@ function getStepContent(step) {
             fullWidth
             margin="normal"
             name="emailAddress"
-          />
-          <label> Workspace Url (optional) </label>
-          <div className="col-sm-3 my-1">
-            <label className="sr-only" for="inlineFormInputGroupUsername">
-              Username
-            </label>
-            <div className="input-group">
-              <div className="input-group-prepend">
-                <div className="input-group-text">@</div>
-              </div>
-              <input
-                type="text"
-                className="form-control"
-                id="inlineFormInputGroupUsername"
-                placeholder="Username"
-              />
-            </div>
-          </div>
+          /> */}
+          <Box
+            sx={{
+              width: 500,
+              maxWidth: "100%",
+              justifyContent: "center",
+              margin: "auto",
+            }}
+          >
+            <label> Workspace Name </label>
+            <TextField fullWidth label="Eden" id="fullWidth" />
+            <br />
+            <br />
+            <label> Workspace Name </label>
+            <br />
+            <TextField label="www.eden.com/" id="fullWidth" />
+            <TextField className="inptt" label="Eden" id="fullWidth" />
+          </Box>
+          <br />
         </>
       );
     case 2:
       return (
         <>
-          <h1>How are you planning to use Eden?</h1>
-          <p>We'll streamline your setup experience accordingly</p>
-          <div>
-            <div>
-              <PersonIcon />
-              <h3 className="check">For myself</h3>
+          <div align="center">
+            <h3>How are you planning to use Eden?</h3>
+            <p>We'll streamline your setup experience accordingly</p>
+          </div>
+          <br />
+          <div className="flex-container">
+            <div className="flex-item" align="left">
+              <PersonIcon color="primary" />
+              <br />
+              <br />
+              <h6 className="check">For myself</h6>
               <p>write better. think more clearly, stay organised</p>
             </div>
-            <div>
-              <PeopleAltIcon />
-              <h3>With my team</h3>
+            <div className="flex-item" align="left">
+              <PeopleAltIcon color="primary" />
+              <br />
+              <br />
+              <h6>With my team</h6>
               <p>Wikis, docs, tasks and Projects, all in one place</p>
             </div>
           </div>
+          <br />
         </>
       );
     case 3:
       return (
         <>
-          <CheckCircleSharpIcon fontSize="large" color="primary" />
-          <h1>Congratulations, Eren!</h1>
-          <p>you have completed onBoarding, you can start using the eden!</p>
+          <div align="center"><br />
+            <CheckCircleSharpIcon fontSize="large" className="icon" color="primary" /><br /><br />
+            <h3>Congratulations, Eren!</h3>
+            <p>you have completed onBoarding, you can start using the eden!</p><br />
+          </div>
         </>
       );
     default:
@@ -172,23 +186,23 @@ const LinaerStepper = () => {
         {steps.map((step, index) => {
           const labelProps = {};
           const stepProps = {};
-          if (isStepOptional(index)) {
-            labelProps.optional = (
-              <Typography
-                variant="caption"
-                align="center"
-                style={{ display: "block" }}
-              >
-                optional
-              </Typography>
-            );
-          }
-          if (isStepSkipped(index)) {
-            stepProps.completed = false;
-          }
+          // if (isStepOptional(index)) {
+          //   labelProps.optional = (
+          //     <Typography
+          //       variant="caption"
+          //       align="center"
+          //       style={{ display: "block" }}
+          //     >
+          //       optional
+          //     </Typography>
+          //   );
+          // }
+          // if (isStepSkipped(index)) {
+          //   stepProps.completed = false;
+          // }
           return (
             <Step {...stepProps} key={index}>
-              <StepLabel {...labelProps}></StepLabel>
+              <StepLabel className="step-label" {...labelProps}></StepLabel>
             </Step>
           );
         })}
@@ -218,15 +232,17 @@ const LinaerStepper = () => {
               skip
             </Button>
           )} */}
-          <Button
-            className={classes.button}
-            variant="contained"
-            color="primary"
-            onClick={handleNext}
-          >
-            {/* {activeStep === steps.length - 1 ? 'Finish' : 'Next'} */}
-            {downTextFunc()}
-          </Button>
+          <div align="center">
+            <Button
+              className={classes.button}
+              variant="contained"
+              color="primary"
+              onClick={handleNext}
+            >
+              {/* {activeStep === steps.length - 1 ? 'Finish' : 'Next'} */}
+              {downTextFunc()}
+            </Button>
+          </div>
         </>
       )}
     </div>

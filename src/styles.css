@@ -1,7 +1,53 @@
-.check{
-    color: red;
+.MuiBox-root {
+  width: 75%;
+  /* text-align: center; */
 }
 
-/* .stepper{
-    width: 50%;
-} */
+.domainspan {
+  background-color: rgb(255, 255, 255);
+  padding: 15px;
+  border-radius: 5px;
+  font-size: 15px;
+  color: rgb(143, 144, 145);
+  border: 1px solid rgb(126, 124, 124);
+}
+
+.inptt {
+  width: 55%;
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  column-gap: 20px;
+  justify-content: center;
+}
+
+.flex-item {
+  width: 200px;
+  padding: 10px;
+}
+
+h6 {
+  font-weight: bold;
+}
+h3 {
+  font-weight: bold;
+}
+
+p {
+  color: rgb(146, 149, 151);
+}
+
+.flex-item:hover {
+  border: 1px solid blue;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+@media only screen and (max-width: 600px) {
+  .MuiBox-root {
+    width: 100%;
+    /* text-align: center; */
+  }
+}
