@@ -47,5 +47,9 @@ p {
 @media only screen and (max-width: 600px) {
   .MuiBox-root {
     width: 100%;
+    margin-top: 50px;
+  }
+  h3{
+    font-size: 20px;
   }
 }

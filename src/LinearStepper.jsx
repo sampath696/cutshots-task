@@ -161,7 +161,7 @@ const LinaerStepper = () => {
       </Stepper>
 
       {activeStep === steps.length ? (
-        <Typography variant="h3" align="center">
+        <Typography variant="h6" align="center">
           Thank You
         </Typography>
       ) : (
